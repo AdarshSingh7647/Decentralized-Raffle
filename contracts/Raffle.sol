@@ -7,7 +7,6 @@ import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol";
 import "hardhat/console.sol";
 
-/* Errors */
 error Raffle__UpkeepNotNeeded(
   uint256 currentBalance,
   uint256 numPlayers,
@@ -45,7 +44,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
   constructor(
     address vrfCoordinatorV2,
     uint64 subscriptionId,
-    bytes32 gasLane, // keyHash
+    bytes32 gasLane,
     uint256 interval,
     uint256 entranceFee,
     uint32 callbackGasLimit
@@ -85,7 +84,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
     bool hasPlayers = s_players.length > 0;
     bool hasBalance = address(this).balance > 0;
     upkeepNeeded = (timePassed && isOpen && hasBalance && hasPlayers);
-    return (upkeepNeeded, "0x0"); // can we comment this out?
+    return (upkeepNeeded, "0x0");
   }
 
   function performUpkeep(bytes calldata /* performData */) external override {
