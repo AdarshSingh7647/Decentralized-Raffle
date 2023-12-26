@@ -1,6 +1,6 @@
 # Raffle Contract
 
-This is a sample raffle contract that implements the Chainlink VRF Version 2. The contract allows users to enter a raffle by sending a specified amount of ether to the contract's address. Once the raffle has reached a certain time interval or number of players, a random winner is chosen using the Chainlink VRF algorithm.
+This is a simple raffle contract that implements the Chainlink VRF Version 2. The contract allows users to enter a raffle by sending a specified amount of ether to the contract's address. Once the raffle has reached a certain time interval or number of players, a random winner is chosen using the Chainlink VRF algorithm.
 
 ## Features
 
